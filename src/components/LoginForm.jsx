@@ -20,7 +20,7 @@ const SignIn = () => {
   return (
     <div>
       <form onSubmit={signIn}>
-        <h1>Log In</h1>
+        <h1>Sign In</h1>
         <input
           type="email"
           placeholder="Enter your email"
@@ -33,7 +33,7 @@ const SignIn = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button type="submit">Log in</button>
+        <button type="submit">Sign in</button>
       </form>
     </div>
   );
