@@ -4,23 +4,18 @@ import { useNavigate } from "react-router-dom";
 
 const ResetForm = () => {
   const auth = getAuth();
-  const emailRef = useRef();
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-  // const [loading, setLoading] = useState(false);
-  // const navigate = useNavigate();
 
   const handleSubmit = async () => {
     await sendPasswordResetEmail(auth, email)
       .then(function () {
-        return "Check your inbox for futher instructions";
+        alert("Check your inbox for futher instructions");
       })
 
-      .catch(function (error) {
-        return "Oops! Something went wrong!";
-      })
-      .finally(setEmail(""));
+      .catch((error) => alert("Oops! Something went wrong!"));
+    // .finally(setEmail(""));
   };
 
   return (
